@@ -1,0 +1,32 @@
+@import 'https://fonts.googleapis.com/css?family=Cormorant';
+
+body {
+	background: url('../assets/wood_bkg.png') lightgray fixed;
+}
+
+
+/* Remove the navbar's default rounded borders and increase the bottom margin */ 
+.navbar {
+	margin-bottom: 50px;
+	border-radius: 0;
+}
+
+/* Remove the jumbotron's default bottom margin */ 
+.jumbotron {
+	margin-bottom: 0;
+/* 	background: url('../assets/stone_flower_bkg.jpg') no-repeat top center; */
+/* 	background-size: contain; */
+/* 	background-color: #805741; */
+}
+
+.fancy_money {
+	font-size: 20px;
+	font-family: 'Cormorant', sans-serif;
+}
+
+
+/* Add a gray background color and some padding to the footer */
+footer {
+	background-color: #f2f2f2;
+	padding: 25px;
+}
