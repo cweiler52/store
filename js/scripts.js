@@ -33,6 +33,7 @@ $(function () {
 		
 			e.preventDefault();
 			$('#msg_fired').show();
+// 			$("#ContactUs").delay("slow").fadeOut('slow');
 		});
 
 	});
