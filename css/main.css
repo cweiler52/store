@@ -1,6 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Cormorant';
 
 body {
+	position: relative;
 	background: url('../assets/wood_bkg.png') lightgray fixed;
 }
 
@@ -10,20 +11,47 @@ body {
 	margin-bottom: 50px;
 	border-radius: 0;
 }
+.affix {
+	top:0;
+	width: 100%;
+	z-index: 9999 !important;
+}
+.affix ~ .container-fluid {
+	position: relative;
+	top: 50px;
+}
 
 /* Remove the jumbotron's default bottom margin */ 
 .jumbotron {
+	height: 500px;
 	margin-bottom: 0;
-/* 	background: url('../assets/stone_flower_bkg.jpg') no-repeat top center; */
-/* 	background-size: contain; */
-/* 	background-color: #805741; */
+	background-image: url('../assets/white_panel_bkg3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
 }
 
+#title_placement {
+	position: relative;
+	top: 50px;
+	right: 40px;
+}
+
+.fancy_title {
+	font-family: 'Cormorant', sans-serif;
+}
 .fancy_money {
 	font-size: 20px;
 	font-family: 'Cormorant', sans-serif;
 }
 
+.leading_15 {
+	letter-spacing: 1.5px;
+}
+.strike_through {
+	text-decoration-line: line-through;
+	margin-right: 6px; 
+}
 
 /* Add a gray background color and some padding to the footer */
 footer {

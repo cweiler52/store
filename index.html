@@ -11,26 +11,19 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
     <div class="jumbotron">
-        <div class="container text-center">
-            <h1>Anisa&apos;s Plant &amp; Tree Store</h1>
-            <p>Care &amp; Gardening Tips</p>
-        </div>
+        <div id="title_placement" class="container text-center fancy_title" title="Anisa&apos;s  Decorative Plants"></div>
     </div>
 
-    <nav class="navbar navbar-inverse ">
+    <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="500">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"></button> <a class="navbar-brand" href="#">Logo</a>
-            </div>
-
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Deals</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home" id="home">Home</a></li>
+                    <li><a href="#deals" id="deals">Deals</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#ContactUs">Contact</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -41,19 +34,58 @@
             </div>
         </div>
     </nav>
-
+	<div id="ContactUs" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Drop Us a Line</h4>
+				</div>
+				<div class="modal-body">
+					<form action="https://formspree.io/cliff@cliffweiler.com" method="POST">
+						<div class="control-group">
+							<div class="form-group">
+								<input class="form-control" name="name" type="text" placeholder="Name">
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="form-group">
+								<input class="form-control" name="email" type="email" placeholder="Email Address">
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="form-group">
+								<input class="form-control" name="phone" type="tel" placeholder="Phone Number">
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="form-group">
+								<textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+							</div>
+						</div>
+						<div class="form-group text-right">
+							<div class="col-sm-7 text-left" id="msg_fired" style="display:none; margin-right: 40px; padding-top: 4px; color: #c00a0a">Your message has been sent. Thank You!</div>
+							<button type="submit" class="btn btn-info" id="fire_email">Send</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+			
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-4 plants deal">
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         Snake Plant
                     </div>
 
-                    <div class="panel-body"><img src="assets/plants/Snake Plant (Sansevieria trifasciata).jpg" class="img-responsive" style="width: 100%" alt="Image"></div>
+                    <div class="panel-body"><img src="assets/plants/Snake_Plant.jpg" class="img-responsive" style="width: 100%" alt="Image"></div>
 
                     <div class="panel-footer container-fluid">
-                    	<div class="fancy_money col-sm-7">$45</div>
+                    	<div class="fancy_money col-sm-7"><span class="strike_through">$45</span>$30</div>
 						<button type="button" class="btn btn-info col-sm-5" data-toggle="modal" data-target="#SnakePlant">View Details</button>
                     </div>
                 </div>
@@ -68,10 +100,10 @@
 			      </div>
 			      <div class="modal-body">
 			        <h4>Care</h4>
-			        <p>Care is minimal—place anywhere you&apos;d like and let soil dry completely between watering. Check the soil every week, but it&apos;s fine to skip a few.</p>
+			        <p>Care is minimal place anywhere you&apos;d like and let soil dry completely between watering. Check the soil every week, but it&apos;s fine to skip a few.</p>
 			        <br>
 					<h4>Cost</h4>
-			        <p>$45</p>
+			        <p><span class="strike_through">$45</span>$30</p>
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-info" data-dismiss="modal">Add to Cart</button>
@@ -81,7 +113,7 @@
 			  </div>
 			</div>
 			
-			<div class="col-sm-4">
+			<div class="col-sm-4 plants">
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         Bonsai Money Tree
@@ -119,13 +151,13 @@
 				</div>
 			</div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-4 plants">
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         Castiron Plant
                     </div>
 
-                    <div class="panel-body"><img src="assets/plants/Castiron Plant (Aspidistra elatior).jpg" class="img-responsive" style="width: 100%" alt="Image"></div>
+                    <div class="panel-body"><img src="assets/plants/Castiron_Plant.jpg" class="img-responsive" style="width: 100%" alt="Image"></div>
 
                     <div class="panel-footer container-fluid">
                     	<div class="fancy_money col-sm-7">$25</div>
@@ -143,7 +175,7 @@
 						</div>
 						<div class="modal-body">
 							<h4>Care</h4>
-							<p>This plant is &ldquo;mostly for foliage,&rdquo; meaning if you&apos;re looking to add a lush, dark green plant to your space, this one is for you. It does well in medium to low light and is tolerant of neglect, so it&apos;s fine if you forget to water it once in a while.</p>
+							<p>This plant is mostly for foliage, meaning if you&apos;re looking to add a lush, dark green plant to your space, this one is for you. It does well in medium to low light and is tolerant of neglect, so it&apos;s fine if you forget to water it once in a while.</p>
 							<p>Water once a week or every ten days.</p>
 							<br>
 							<h4>Cost</h4>
@@ -162,7 +194,7 @@
     <div class="container">
         <div class="row">
             
-            <div class="col-sm-4">
+            <div class="col-sm-4 plants">
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         African Spear Plant
@@ -200,7 +232,7 @@
 				</div>
 			</div>
 			
-            <div class="col-sm-4">
+            <div class="col-sm-4 plants">
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         Wisteria Bonsai Tree
@@ -238,16 +270,16 @@
 				</div>
 			</div>
 			
-			<div class="col-sm-4">
+			<div class="col-sm-4 plants deal">
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         Meyer Lemon Tree
                     </div>
 
-                    <div class="panel-body"><img src="assets/plants/Meyer Lemon Tree (Citrus x meyeri).jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-body"><img src="assets/plants/Meyer_Lemon_Tree.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
 
                     <div class="panel-footer container-fluid">
-                    	<div class="fancy_money col-sm-7">$50</div>
+                    	<div class="fancy_money col-sm-7"><span class="strike_through">$50</span>$40</div>
 						<button type="button" class="btn btn-info col-sm-5" data-toggle="modal" data-target="#MeyerLemonTree">View Details</button>
                     </div>
                 </div>
@@ -266,7 +298,7 @@
 							<p>Water weekly.</p>
 							<br>
 							<h4>Cost</h4>
-							<p>$50</p>
+							<p><span class="strike_through">$50</span>$40</p>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-info" data-dismiss="modal">Add to Cart</button>
@@ -280,66 +312,137 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-4 plants deal">
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         Fiddle-Leaf Fig Tree
                     </div>
 
-                    <div class="panel-body"><img src="assets/plants/Fiddle-Leaf Fig Tree (Ficus lyrata).jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-body"><img src="assets/plants/Fiddle_Leaf_Fig_Tree.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
 
                     <div class="panel-footer container-fluid">
-                    	<div class="fancy_money col-sm-7">$45</div>
-						<button type="button" class="btn btn-info col-sm-5" data-toggle="modal" data-target="#SnakePlant">View Details</button>
+                    	<div class="fancy_money col-sm-7"><span class="strike_through">$60</span>$45</div>
+						<button type="button" class="btn btn-info col-sm-5" data-toggle="modal" data-target="#FiddleLeafFig">View Details</button>
                     </div>
                 </div>
             </div>
-
-            <div class="col-sm-4">
+			<div id="FiddleLeafFig" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Fiddle-Leaf Fig Tree (Ficus lyrata)</h4>
+						</div>
+						<div class="modal-body">
+							<h4>Care</h4>
+							<p>This shrub boasts a long, elegant stem and branches with broad, leathery leaves. For placement, Schrader suggests “under a skylight or next to a window.” In other words, it needs as much sun as possible. Schrader suggests pruning the top branches when it grows above the window frame.</p>
+							<p>Water once a week, or more if it’s winter and the air in your home is dry.</p>
+							<br>
+							<h4>Cost</h4>
+							<p><span class="strike_through">$60</span>$45</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-info" data-dismiss="modal">Add to Cart</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+            <div class="col-sm-4 plants">
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         Eucharist Lily
                     </div>
 
-                    <div class="panel-body"><img src="assets/plants/Eucharist Lily (Eucharis amazonica).jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-body"><img src="assets/plants/Eucharist_Lily.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
 
                     <div class="panel-footer container-fluid">
                     	<div class="fancy_money col-sm-7">$45</div>
-						<button type="button" class="btn btn-info col-sm-5" data-toggle="modal" data-target="#SnakePlant">View Details</button>
+						<button type="button" class="btn btn-info col-sm-5" data-toggle="modal" data-target="#EucharistLily">View Details</button>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-sm-4">
+            <div id="EucharistLily" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Eucharist Lily (Eucharis amazonica)</h4>
+						</div>
+						<div class="modal-body">
+							<h4>Care</h4>
+							<p>Another dark green plant, but this one features large, white flowers that bloom throughout winter and early spring. Even when it&apos;s not blooming, it&apos;s nice to look at. It thrives in medium light; allow soil to dry between watering.</p>
+							<p>The leaves will wilt when it needs water, but once a week should suffice.</p>
+							<br>
+							<h4>Cost</h4>
+							<p>$45</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-info" data-dismiss="modal">Add to Cart</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+            <div class="col-sm-4 plants">
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         Split-Leaf Philodendron
                     </div>
 
-                    <div class="panel-body"><img src="assets/plants/Split-Leaf Philodendron (Monstera deliciosa).jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-body"><img src="assets/plants/Split_Leaf_Philodendron.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
 
                     <div class="panel-footer container-fluid">
                     	<div class="fancy_money col-sm-7">$45</div>
-						<button type="button" class="btn btn-info col-sm-5" data-toggle="modal" data-target="#SnakePlant">View Details</button>
+						<button type="button" class="btn btn-info col-sm-5" data-toggle="modal" data-target="#SplitLeafPhilodendron">View Details</button>
                     </div>
                 </div>
             </div>
+            <div id="SplitLeafPhilodendron" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Split-Leaf Philodendron (Monstera deliciosa)</h4>
+						</div>
+						<div class="modal-body">
+							<h4>Care</h4>
+							<p>This plant has a distinctive leaf that looks as though it&apos;s been gently cut into by a careful hand. You can cut off the top as long as it has air roots attached and replant it, meaning if you buy one of these, you could easily have more, if you&apos;d like.</p>
+							<p>Water once a week.</p>
+							<br>
+							<h4>Cost</h4>
+							<p>$45</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-info" data-dismiss="modal">Add to Cart</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
         </div>
     </div><br>
     <br>
 
     <footer class="container-fluid text-center">
-        <p>Anisa&apos;s Plant &amp; Tree Store &copy; Copyright 2019</p>
-
+        <p>Anisa&apos;s Decorative Plants &copy; Copyright 2019</p>
+<!--
         <form class="form-inline">
             Get deals: <input type="email" class="form-control" size="50" placeholder="Email Address"> <button type="button" class="btn btn-danger">Sign Up</button>
         </form>
+-->
     </footer>
 </body>
 </html>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+	<!-- Custom JS -->
+	<script src="js/scripts.js"></script>
 </body>
 </html>
